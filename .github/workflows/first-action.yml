@@ -17,7 +17,7 @@ jobs:
     steps:
       #descarga y hace un checkout sobre tu repo para poder acceer a el dentro del job
       - name: checkout branch
-        users: actions/checkout@v3
+        uses: actions/checkout@v3
       
       - name: ejecutar script de una linea
         run: echo Hello, world!
