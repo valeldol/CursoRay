@@ -1,0 +1,28 @@
+name: first action
+
+# controla
+
+on:
+  push: #evento
+    branches: [ main ]
+    #paths: [ src/'' ]
+  pull_request:
+    branches: [ main ]
+
+jobs: 
+  miJob1:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      #descarga y hace un checkout sobre tu repo para poder acceer a el dentro del job
+      - name: checkout branch
+        users: actions/checkout@v3
+      
+      - name: ejecutar script de una linea
+        run: echo Hello, world!
+
+      - name: ejecutar script multilinea
+        run: |
+          echo add other actions to the build,
+          echo test, and deploy your project
